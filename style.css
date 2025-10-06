@@ -63,19 +63,17 @@ header a:active{
 body{
     background-color: #000000;
     margin: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 main .welcome{
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.1)), linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)), url("Images/background.jpg");
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.1)), linear-gradient(0deg, rgba(0,0,0,1.0), rgba(0,0,0,0)), url("Images/background.jpg");
     background-size: 100%;
-    background-position-x: 100px;
     background-repeat: no-repeat;
-    height: calc(100vh - 110px);
+    height: 850px;
     margin-left: 0;
     padding-top: 10px;
-    width: 95%;
-    padding-right: 10px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -111,7 +109,6 @@ main .welcome{
 }
 
 main .welcome-text-1{
-    display: block;
     font-size: 12px;
     text-align: center;
     vertical-align: middle;
@@ -120,7 +117,7 @@ main .welcome-text-1{
     width: 315px;
     border-radius: 15px;
     margin-left: 130px;
-    margin-top: 60px;
+    margin-top: 200px;
     margin-bottom: 10px;
 }
 
@@ -163,18 +160,14 @@ main .welcome-text-3{
 }
 
 .news {
-    padding-top: 100px;
+    padding-top: 80px;
     text-align: center;
     height: 100vh;
     width: 100%;
-    padding-right: 10px;
-}
-.news > * {
-    overflow: hidden;
 }
 
 .news h2 {
-    width: 100vw;
+    width: 100%;
     font-size: 30px;
 }
 .news p {
@@ -184,20 +177,22 @@ main .welcome-text-3{
 }
 
 .newscards {
-    padding-left: 130px;
-    width: 90%;
+    width: 100%;
+    height: 80%;
     margin: 30px 0;
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    justify-content: center;
+
 }
 
 .bignewscard {
     /*background-color: #257fcd;*/
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid #535353;
-    height: 375px;
-    width: 610px;
+    height: 55%;
+    width: 40%;
     justify-self: flex-start;
 }
 
@@ -250,17 +245,17 @@ main .welcome-text-3{
 
 .smallnewscontainer {
     /*background-color: #257fcd;*/
-    width: 610px;
-    height: 475px;
+    width: 40%;
+    height: 80%;
     display: block;
     justify-self: flex-end;
 }
 .smallnewscard {
     /*background-color: #903cd6;*/
     margin-bottom: 30px;
-    height: 125px;
+    height: 25%;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid #535353;
 }
 
