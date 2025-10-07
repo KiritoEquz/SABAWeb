@@ -259,7 +259,19 @@ main .welcome-text-3{
     border: 1px solid #535353;
 }
 
-
+.registration form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    color: black;
+}
+button{
+    color: black;
+}
+input:focus{
+    border: 3px solid red;
+}
 
 footer{
     background-color: rgba(10,21,38,0.95);
