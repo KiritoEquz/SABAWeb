@@ -16,13 +16,13 @@ html{
     display: flex;
     gap: 30px;
     font-size: 25px;
-    align-items: center;
+    align-self: center;
 }
 
 .logo img{
+    align-self: center;
     height: 70px;
     width: 70px;
-    margin-left: 30px;
     border-radius: 100px;
 }
 
@@ -30,7 +30,7 @@ a{
     text-decoration: none;
 }
 
-header{
+/*header{
     display: flex;
     gap: 100px;
     position: sticky;
@@ -41,6 +41,26 @@ header{
     height: 110px;
     backdrop-filter: blur(5px);
     z-index: 9999;
+    padding-left: 100px;
+    justify-content: space-between;
+}*/
+header{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    height: 6em;
+}
+header .container{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 85em;
+    margin: 0 auto;
+    padding-left:130px;
+}
+header nav{
+    align-content: center;
 }
 
 header ul{
@@ -64,17 +84,22 @@ body{
     background-color: #000000;
     margin: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 main .welcome{
     background-image: linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.1)), linear-gradient(0deg, rgba(0,0,0,1.0), rgba(0,0,0,0)), url("Images/background.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 700px;
-    margin-left: 0;
-    padding-top: 10px;
+    padding-top: 6em;
     width: 100%;
-    overflow: hidden;
+}
+.welcome .container {
+    margin-left: 130px;
+    display: flex;
+    flex-direction: column;
 }
 
 .gradient{
@@ -108,7 +133,7 @@ main .welcome{
     font-size: 20px;
 }
 
-main .welcome-text-1{
+.welcome-text-1{
     font-size: 12px;
     text-align: center;
     vertical-align: middle;
@@ -116,23 +141,20 @@ main .welcome-text-1{
     height: 18px;
     width: 315px;
     border-radius: 15px;
-    margin-left: 130px;
     margin-top: 100px;
     margin-bottom: 10px;
 }
 
-main .welcome-text-2{
+.welcome-text-2{
     width: 40%;
-    margin-left: 130px;
     font-size: 60px;
     line-height: 60px;
 }
 
-main .welcome-text-3{
+.welcome-text-3{
     font-family: 'Oswald', sans-serif;
     width: 40%;
     font-size: 20px;
-    margin-left: 130px;
     margin-top: 15px;
     line-height: 30px;
 }
@@ -142,7 +164,6 @@ main .welcome-text-3{
 }
 
 .welcome .btn {
-    margin-left: 130px;
     margin-top: 40px;
 }
 .welcome .btn a{
@@ -177,116 +198,52 @@ main .welcome-text-3{
 }
 
 .newscards {
-    width: 100%;
-    height: 90%;
-    margin: 30px 0;
+    margin: 30px 130px;
     display: flex;
-    gap: 40px;
+    min-height: 100vh;
     justify-content: center;
+    gap: 30px;
 
 }
 
 .bignewscard {
     /*background-color: #257fcd;*/
-    overflow: hidden;
     border-radius: 10px;
     border: 1px solid #535353;
-    height: 40%;
-    width: 40%;
-    justify-self: flex-start;
-}
-
-.bignewscard .imagepart{
-    height: 70%;
-    width: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.1)), url("Images/background-2.png") ;
-    background-size: cover;
-    background-clip: border-box;
-    position: relative;
-}
-.bignewscard .imagepart h3{
-    text-align: left;
-    padding: 10px;
-    vertical-align: center;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-
-.bignewscard .solidpart{
-    background-color: #000000;
-    height: 30%;
-    position: relative;
-}
-.bignewscard .solidpart h3{
-    padding: 5px 10px;
-
-}
-.bignewscard .solidpart p{
-    text-align: left;
-    padding: 0 10px;
-}
-
-.bignewscard .solidpart .whitebackground{
-    background-color: #ffffff;
-    height: 40px;
-    width: max-content;
-    float: right;
-    position: relative;
-    right: 20px;
-    bottom: 0;
-}
-.bignewscard .solidpart .whitebackground a{
-    color: #000000;
-    line-height: 40px;
-    text-align: center;
-    vertical-align: middle;
+    flex: 1;
+    height: 20em;
 }
 
 .smallnewscontainer {
-    /*background-color: #257fcd;*/
-    width: 40%;
-    height: 80%;
-    display: block;
-    justify-self: flex-end;
-}
-.smallnewscard {
-    /*background-color: #903cd6;*/
-    margin-bottom: 30px;
-    height: 20%;
-    width: 100%;
     border-radius: 10px;
     border: 1px solid #535353;
-    padding: 2%;
-    background-color: #257fcd;
-    display: flex;
-}
-.smallnewscard img {
-    height: auto;
-    justify-self: center;
-    border-radius: 10px;
-
-}
-
-.registration form{
+    flex: 1;
     display: flex;
     flex-direction: column;
-}
-input{
-    color: black;
-}
-button{
-    color: black;
-}
-input:focus{
-    border: 3px solid red;
+    gap: 20px;
 }
 
-footer{
-    background-color: rgba(10,21,38,0.95);
+.smallnewscard {
+    border-radius: 10px;
+    border: 1px solid #535353;
+    flex: 1;
 }
+@media (max-width: 768px){
+    header .container{
+        padding-left: 20px; !important
+    }
+    .welcome .container{
+        margin-left: 20px; !important
+    }
+    .welcome-text-2, .welcome-text-3{
+        width: 90%; !important;
+    }
 
-footer address{
-    display: flex;
-    gap: 2rem;
+    .newscards {
+        flex-direction: column;
+        margin: 30px 20px;
+    }
+    .smallnewscontainer {
+        flex: 2;
+    }
 }
