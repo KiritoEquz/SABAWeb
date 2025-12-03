@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-padding-top: 105px;
+}
+
+.logo{
+    display: flex;
+    gap: 30px;
+    font-size: 25px;
+    align-self: center;
+    margin-right: 5%;
+}
+
+.logo img{
+    align-self: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 100px;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    height: 6em;
+    z-index: 100;
+    box-shadow: 0 0 20px 1px #5a9fda;
+}
+header .container{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+header nav{
+    align-content: center;
+    width: 90%;
+}
+
+header .menus {
+    display: flex;
+    gap: 50px;
+    width: 60%;
+    margin-left: auto;
+    justify-self: flex-end;
+    justify-content: flex-end;
+}
+
+.menus .icons {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.icons img {
+    height: 40px;
+}
+
+header ul{
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    gap: 10%;
+    width: 100%;
+}
+header input {
+    display: none;
+}
+
+header a:hover{
+    color: rgb(146, 226, 252);
+}
+
+header a:active{
+    color: rgb(64, 106, 120);
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+label[for="burger"] {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    align-self: center;
+}
+
+label[for="burger"] span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0s .25s;
+}
+
+label[for="burger"] span::before,
+label[for="burger"] span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    left: 0;
+    transition: transform .25s ease-in-out, top .25s ease-in-out;
+}
+
+label[for="burger"] span::before {
+    top: -10px;
+}
+
+label[for="burger"] span::after {
+    top: 10px;
+}
+
+#burger:checked + label span {
+    background: transparent;
+}
+
+#burger:checked + label span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#burger:checked + label span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 1500px) {
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    header nav li {
+        text-align: center;
+        padding: 1em 0;
+        border-bottom: 1px solid #535353;
+    }
+    .menus:has(#burger:checked) nav {
+        display: block;
+    }
+    label[for="burger"] {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        padding: 0 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header .container .logo h1 {
+        display: none;
+    }
+}

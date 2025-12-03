@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PR2.iml" filepath="$PROJECT_DIR$/.idea/PR2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SABAWeb.iml" filepath="$PROJECT_DIR$/.idea/SABAWeb.iml" />
     </modules>
   </component>
 </project>
