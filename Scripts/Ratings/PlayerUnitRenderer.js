@@ -8,7 +8,7 @@ function getColorByRating(rating) {
 function createPlayerUnit(player) {
     const playerUnit = document.createElement('div');
     playerUnit.className = "tableunit";
-    const pfp = player.avatar === "" ? "unknown.webp" : player.avatar;
+    const pfp = player.avatar === "" ? "../../Images/Pfps/unknown.webp" : player.avatar;
     playerUnit.innerHTML = `
     <div class="rank">${player.rank}</div>
             <div class="flag"><img src="../Icons/Flags/${player.country}.svg" alt=""></div>
