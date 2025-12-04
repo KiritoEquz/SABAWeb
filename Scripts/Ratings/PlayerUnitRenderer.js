@@ -22,8 +22,9 @@ function createPlayerUnit(player) {
 function renderPlayerCards(players, pageNumber) {
     const table = document.getElementById(`table`);
     table.innerHTML = ``;
+
     for (let i = 0; i < 10; i++) {
-        console.log(pageNumber)
+        if (i + (pageNumber-1)*10 >= players.length) return;
         const unit = createPlayerUnit(players[i+(pageNumber-1)*10]);
         const flagc = unit.getElementsByClassName("flag");
         flagc[0].style.backgroundColor = getColorByRating(players.rank);
