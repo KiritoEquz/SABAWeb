@@ -9,16 +9,34 @@
     height: 50px;
 }
 
-h1 {
-    margin: 0;
-}
-
 .maps {
     padding-top: 60px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.searchbar {
+    width: 60%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchbar input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.searchbar input:focus {
+    outline: none;
+    border-color: #d843ce;
 }
 
 .maplist {
@@ -78,13 +96,13 @@ h1 {
 }
 
 @media (max-width: 900px) {
-    .maplist {
+    .maplist, .searchbar {
         width: 80%;
     }
 }
 
 @media (max-width: 600px) {
-    .maplist {
+    .maplist, .searchbar {
         width: 95%;
     }
     .mapcard {

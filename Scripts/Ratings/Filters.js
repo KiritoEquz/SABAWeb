@@ -1,4 +1,4 @@
-import {players} from './Players.js';
+import {players} from '../Data/Players.js';
 import {nextBtn, nextPage, prevBtn, prevPage, refreshCount} from "./Pages.js";
 
 const filters = document.getElementById("filters");

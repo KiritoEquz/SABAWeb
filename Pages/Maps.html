@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Карты</title>
     <link rel="icon" type="image/png" href="../logo.png">
     <link rel="stylesheet" href="../Styles/global.css">
     <link rel="stylesheet" href="../Styles/maps.css">
+    <script type="module" src="../Scripts/Maps/MapsRenderer.js" defer></script>
 </head>
 <body>
 <header>
@@ -40,37 +41,12 @@
 
 <div class="maps">
     <h1>Список карт</h1>
-    <div class="maplist">
 
-        <div class="mapcard">
-            <div class="cover">
-                <img src="covers/example1.jpg" alt="cover">
-            </div>
-            <div class="info">
-                <h2 class="title">Song Title 1</h2>
-                <p class="author">Author Name</p>
-            </div>
-        </div>
+    <div class="searchbar">
+        <input type="text" placeholder="Поиск по автору или названию...">
+    </div>
 
-        <div class="mapcard">
-            <div class="cover">
-                <img src="covers/example2.jpg" alt="cover">
-            </div>
-            <div class="info">
-                <h2 class="title">Song Title 2</h2>
-                <p class="author">Author Name</p>
-            </div>
-        </div>
-
-        <div class="mapcard">
-            <div class="cover">
-                <img src="covers/example3.jpg" alt="cover">
-            </div>
-            <div class="info">
-                <h2 class="title">Song Title 3</h2>
-                <p class="author">Author Name</p>
-            </div>
-        </div>
+    <div class="maplist" id="maplist">
 
     </div>
 </div>
