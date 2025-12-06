@@ -5,8 +5,6 @@ import {maps} from "../Data/Maps.js"
 const topBtn = document.getElementById('top');
 const recentBtn = document.getElementById('recent');
 
-console.log(fetchedTopScores)
-
 
 function getScoresHTML(fetchedScores) {
     return fetchedScores.map(score => {
@@ -58,7 +56,7 @@ function getScoresHTML(fetchedScores) {
                 <img src="${score.leaderboard.coverImage}" alt="">
             </div>
             <div class="mapinfo">
-                <a href="">${score.leaderboard.songAuthorName} - ${score.leaderboard.songName}</a>
+                <a href="https://beatsaver.com/?q=${score.leaderboard.songHash}">${score.leaderboard.songAuthorName} - ${score.leaderboard.songName}</a>
                 <p>${score.leaderboard.levelAuthorName}</p>
             </div>
             <div class="scoreinfo2">

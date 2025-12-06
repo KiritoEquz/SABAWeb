@@ -35,10 +35,10 @@ export let fetchedRecentScores = null;
 let ssTopResponse = null;
 let ssRecentResponse = null;
 
-await fetch('https://cors-anywhere.herokuapp.com/https://scoresaber.com/api/player/76561198427751585/scores?limit=10&sort=top')
+await fetch('https://c.prox.shyyluna.dev/https://scoresaber.com/api/player/76561198427751585/scores?limit=10&sort=top')
     .then(data => data.json()).then(json => ssTopResponse = json);
 
-await fetch('https://cors-anywhere.herokuapp.com/https://scoresaber.com/api/player/76561198427751585/scores?limit=10&sort=recent')
+await fetch('https://c.prox.shyyluna.dev/https://scoresaber.com/api/player/76561198427751585/scores?limit=10&sort=recent')
     .then(data => data.json()).then(json => ssRecentResponse = json);
 
 fetchedTopScores = ssTopResponse.playerScores.map(score => {

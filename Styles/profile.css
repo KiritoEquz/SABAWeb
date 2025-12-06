@@ -166,6 +166,8 @@ body {
     display: flex;
 }
 
+.score p {}
+
 .scoreinfo1 {
     width: 100px;
     display: flex;
@@ -204,10 +206,12 @@ body {
 
 .mapinfo a {
     font-size: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,90%);
 }
 
 .mapinfo a ~ p {
     font-size: 12px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,90%);
 }
 
 .scoreinfo2 {

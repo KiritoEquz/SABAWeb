@@ -95,6 +95,31 @@
     color: #bbbbbb;
 }
 
+.mapper {
+    color: #497049;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    gap: 5px;
+}
+.buttons .btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #838383;
+}
+
+.buttons .btn img {
+    height: 20px;
+    width: 20px;
+}
+
 @media (max-width: 900px) {
     .maplist, .searchbar {
         width: 80%;
@@ -103,12 +128,16 @@
 
 @media (max-width: 600px) {
     .maplist, .searchbar {
-        width: 95%;
+        width: 90%;
     }
     .mapcard {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .buttons {
+        flex-direction: row;
+        margin-left: 0;
     }
     .cover {
         width: 80%;
