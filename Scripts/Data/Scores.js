@@ -29,15 +29,26 @@ export const Scores = [
     new Score("168de", 10, "H", 76561198427751585, 3489062, 553.50, 0)
 ]
 
-export let fetchedScores = null;
+export let fetchedTopScores = null;
+export let fetchedRecentScores = null;
 
-let ssResponse = null;
+let ssTopResponse = null;
+let ssRecentResponse = null;
 
-await fetch('https://corsproxy.io/?https://scoresaber.com/api/player/76561198427751585/scores?limit=20&sort=top')
-    .then(data => data.json()).then(json => ssResponse = json);
+await fetch('https://cors-anywhere.herokuapp.com/https://scoresaber.com/api/player/76561198427751585/scores?limit=10&sort=top')
+    .then(data => data.json()).then(json => ssTopResponse = json);
 
+await fetch('https://cors-anywhere.herokuapp.com/https://scoresaber.com/api/player/76561198427751585/scores?limit=10&sort=recent')
+    .then(data => data.json()).then(json => ssRecentResponse = json);
 
-fetchedScores = ssResponse.playerScores.map(score => {
+fetchedTopScores = ssTopResponse.playerScores.map(score => {
+    return {
+        score: score.score,
+        leaderboard: score.leaderboard
+    }
+})
+
+fetchedRecentScores = ssRecentResponse.playerScores.map(score => {
     return {
         score: score.score,
         leaderboard: score.leaderboard

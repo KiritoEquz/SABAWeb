@@ -1,7 +1,14 @@
-import {fetchedScores} from "../Data/Scores.js"
+import {fetchedTopScores} from "../Data/Scores.js"
+import {fetchedRecentScores} from "../Data/Scores.js"
 import {maps} from "../Data/Maps.js"
 
-function getScoresHTML() {
+const topBtn = document.getElementById('top');
+const recentBtn = document.getElementById('recent');
+
+console.log(fetchedTopScores)
+
+
+function getScoresHTML(fetchedScores) {
     return fetchedScores.map(score => {
         const currDate = new Date(Date.now());
         const scoreDate = new Date(score.score.timeSet);
@@ -37,7 +44,7 @@ function getScoresHTML() {
 
         const acc = (score.score.baseScore / score.leaderboard.maxScore * 100).toFixed(2);
         let pp = score.score.pp == 0 ? '' : `<div class="pp">
-                    <p>${score.score.pp}</p>
+                    <p>${score.score.pp.toFixed(2)}pp</p>
                 </div>`;
 
         return `<div class="score">
@@ -72,10 +79,31 @@ function getScoresHTML() {
     })
 }
 
-function renderScores() {
-    const scoreTable = document.getElementById('scorestable');
-
-    scoreTable.innerHTML = getScoresHTML().join('');
+function sortTop() {
+    if (!topBtn.classList.contains('active') && recentBtn.classList.contains('active')) {
+        recentBtn.classList.remove('active');
+        topBtn.classList.add('active');
+        renderScores(fetchedTopScores)
+    }
 }
 
-document.addEventListener('DOMContentLoaded', renderScores());
+function sortRecent() {
+    if (!recentBtn.classList.contains('active') && topBtn.classList.contains('active')) {
+        topBtn.classList.remove('active');
+        recentBtn.classList.add('active');
+        renderScores(fetchedRecentScores)
+    }
+}
+
+function renderScores(fetchedScores) {
+    const scoreTable = document.getElementById('scores');
+
+    scoreTable.innerHTML = getScoresHTML(fetchedScores).join('');
+}
+
+document.addEventListener('DOMContentLoaded', topBtn.classList.add('active'));
+document.addEventListener('DOMContentLoaded', renderScores(fetchedTopScores));
+
+
+topBtn.addEventListener('click', () => sortTop());
+recentBtn.addEventListener('click', () => sortRecent());
