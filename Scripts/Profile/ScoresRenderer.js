@@ -18,7 +18,6 @@ function getScoresHTML(fetchedScores) {
         const timeInMs1 = currDate.getTime();
         const timeInMs2 = scoreDate.getTime();
         const diffInMs = timeInMs1 - timeInMs2;
-        console.log(currDate);
 
         const diffInSeconds = Math.trunc(diffInMs / 1000);
         const diffInMinutes = Math.trunc(diffInMs / (1000 * 60));

@@ -21,7 +21,7 @@ body {
 
 .profile .user {
     display: flex;
-    width: fit-content;
+    width: 90%;
     justify-content: center;
     gap: 60px;
 }
@@ -97,6 +97,7 @@ body {
     box-shadow: 0 0 20px 1px #e3e3e3;
     border-radius: 20px;
     padding: 30px 20px;
+
 }
 
 .stats .stat {
@@ -253,4 +254,47 @@ body {
 
 .mistakes img {
     height: 20px;
+}
+
+@media (max-width: 1250px) {
+    .user {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .user .usercard {
+        width: 90%;
+        height: fit-content;
+    }
+    .usercard p {
+        text-align: center;
+        height: auto;
+        max-height: none;
+    }
+    .usercard .img {
+        width: 120px;
+        height: 120px;
+    }
+    .user .stats {
+        width: 90%;
+    }
+    .user .stat {}
+    .scorestable {
+        width: 90%;
+    }
+}
+
+@media (max-width: 900px) {
+    .usercard {
+        flex-direction: column;
+        height: fit-content;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .score {
+        flex-wrap: wrap;
+        padding: 5px;
+    }
 }
