@@ -135,4 +135,91 @@ body {
     margin: 20px 20px;
     background-color: rgba(16, 16, 16, 0.9);
     border-radius: 10px;
+    display: flex;
+}
+
+.scoreinfo1 {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rank {
+    display: flex;
+    gap: 5px;
+}
+
+.rank img {
+    height: 20px;
+}
+
+.cover {
+    margin: auto 10px;
+    height: 80px;
+    width: 80px;
+}
+
+.cover img{
+    height: 80px;
+    border-radius: 10px;
+}
+
+.mapinfo {
+    align-content: center;
+}
+
+.mapinfo a {
+    font-size: 20px;
+}
+
+.mapinfo a ~ p {
+    font-size: 12px;
+}
+
+.scoreinfo2 {
+    padding: 10px 5px;
+    margin-left: auto;
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.scoreinfo2 .acc,
+.scoreinfo2 .pp,
+.scoreinfo2 .points,
+.scoreinfo2 .mistakes {
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 1px black;
+}
+
+.scoreinfo2 .acc {
+    background-color: rgb(13, 131, 222);
+}
+
+
+.scoreinfo2 .pp {
+    display: flex;
+    background-color: rgb(85, 76, 168);
+    gap: 10px;
+}
+
+.points {
+    background-color: rgb(135, 43, 158)
+}
+
+.mistakes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(56, 56, 56)
+}
+
+.mistakes img {
+    height: 20px;
 }
