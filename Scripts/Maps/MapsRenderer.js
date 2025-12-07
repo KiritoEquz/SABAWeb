@@ -28,13 +28,18 @@ function getMapsHTML(maps) {
 function renderMaps(maps) {
 
     const maplist = document.getElementById('maplist');
+    if (maps.length < 1) {
+        maplist.innerHTML = "Карты не найдены.";
+    }
+    else {
+        maplist.innerHTML = getMapsHTML(maps).join('');
+        document.querySelectorAll('.bsr').forEach(button => {
+            button.addEventListener('click', () => {
+                copyBSR(button.getAttribute('id'));
+            })
+        } )
+    }
 
-    maplist.innerHTML = getMapsHTML(maps).join('');
-    document.querySelectorAll('.bsr').forEach(button => {
-        button.addEventListener('click', () => {
-            copyBSR(button.getAttribute('id'));
-        })
-    } )
 }
 
 function filterBySearch() {

@@ -32,7 +32,10 @@ function getGuidesHTML(guides) {
 
 function renderGuides(guides) {
     const guideList = document.getElementById('guidelist');
-    guideList.innerHTML = getGuidesHTML(guides).join('');
+    if (guides.length < 1) {
+        guideList.innerHTML = "Гайды не найдены.";
+    }
+    else (guideList.innerHTML = getGuidesHTML(guides).join(''));
 }
 
 function filterGuides() {
