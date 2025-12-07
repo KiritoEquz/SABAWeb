@@ -22,6 +22,7 @@ function getScoresHTML(fetchedScores) {
         const diffInHours = Math.trunc(diffInMs / (1000 * 60 * 60));
         const diffInDays = Math.trunc(diffInMs / (1000 * 60 * 60 * 24));
         const diffInMonths = Math.trunc(diffInMs / (1000 * 60 * 60 * 24 * 30));
+        const diffInYears = Math.trunc(diffInMs / (1000 * 60 * 60 * 24 * 30 * 12));
 
         if (diffInMinutes === 0) {
             finalDiff = `${diffInSeconds}с`;
@@ -35,9 +36,10 @@ function getScoresHTML(fetchedScores) {
         else if (diffInMonths === 0) {
             finalDiff = `${diffInDays}дн, ${diffInSeconds % 24}ч`
         }
-        else {
+        else if (diffInYears === 0) {
             finalDiff = `${diffInMonths}мес, ${diffInDays % 30}дн`
         }
+        else finalDiff = `${diffInYears}г, ${diffInMonths % 12}мес`;
 
         const acc = (score.score.baseScore / score.leaderboard.maxScore * 100).toFixed(2);
         let pp = score.score.pp == 0 ? '' : `<div class="pp">

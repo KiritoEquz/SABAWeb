@@ -12,8 +12,10 @@ let guides = [ new Guide("/SABAWeb/Images/Guides/accguide.png", "Как улуч
     new Guide( "/SABAWeb/Images/Guides/hardlevels.jpg", "Как проходить сложные карты", "Советы для повышения планки скорости и точности на более высоких по сложности картах.", "")
 ];
 
+let filteredGuides = [];
+const searchbar = document.getElementById("searchbar");
 
-function getGuidesHTML() {
+function getGuidesHTML(guides) {
     return guides.map(guide =>
         `<a href="${guide.link}" class="guidecard">
             <div class="thumb">
@@ -28,9 +30,26 @@ function getGuidesHTML() {
     )
 }
 
-function renderGuides() {
+function renderGuides(guides) {
     const guideList = document.getElementById('guidelist');
-    guideList.innerHTML = getGuidesHTML().join('');
+    guideList.innerHTML = getGuidesHTML(guides).join('');
 }
 
-document.addEventListener('DOMContentLoaded', renderGuides());
+function filterGuides() {
+    if (searchbar.value === "") {
+        renderGuides(guides);
+        return;
+    }
+
+    filteredGuides = [];
+    guides.forEach(guide => {
+        if (guide.name.toLowerCase().includes(searchbar.value.toLowerCase())
+            || guide.description.toLowerCase().includes(searchbar.value.toLowerCase()))  {
+            filteredGuides.push(guide);
+        }
+    })
+    renderGuides(filteredGuides);
+}
+
+document.addEventListener('DOMContentLoaded', renderGuides(guides));
+searchbar.addEventListener("input", () => filterGuides());
