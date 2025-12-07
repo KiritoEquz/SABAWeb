@@ -110,7 +110,8 @@ body {
 }
 
 .tableunit a {
-    width: 100px;
+    width: 150px;
+    overflow: hidden;
 }
 
 .tableunit .pp {

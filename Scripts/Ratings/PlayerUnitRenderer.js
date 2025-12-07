@@ -1,7 +1,7 @@
 function getColorByRating(rating) {
-    if (rating == 1) return "gold";
-    if (rating == 2) return "silver";
-    if (rating == 3) return "saddlebrown";
+    if (rating === 1) return "gold";
+    if (rating === 2) return "silver";
+    if (rating === 3) return "saddlebrown";
     return "#474747";
 }
 
@@ -10,9 +10,9 @@ function createPlayerUnit(player) {
     playerUnit.className = "tableunit";
     const pfp = player.avatar === "" ? "../../Images/Pfps/unknown.webp" : player.avatar;
     playerUnit.innerHTML = `
-    <div class="rank">${player.rank}</div>
+    <div class="rank">${player.sabarank}</div>
             <div class="flag"><img src="../Icons/Flags/${player.country}.svg" alt=""></div>
-            <div class="pfp"><img src="../Images/Pfps/${pfp}" alt=""></div>
+            <div class="pfp"><img src="${pfp}" alt=""></div>
             <a href="">${player.name}</a>
             <div class="pp">${player.pp}pp</div>
     `;
@@ -22,6 +22,10 @@ function createPlayerUnit(player) {
 function renderPlayerCards(players, pageNumber) {
     const table = document.getElementById(`table`);
     table.innerHTML = ``;
+
+    if (players.length === 0) {
+        table.innerHTML = ` <p>Игроки не найдены</p>`
+    }
 
     for (let i = 0; i < 10; i++) {
         if (i + (pageNumber-1)*10 >= players.length) return;

@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карты</title>
+    <title>Профиль</title>
     <link rel="icon" type="image/png" href="../logo.png">
     <link rel="stylesheet" href="../Styles/global.css">
-    <link rel="stylesheet" href="../Styles/maps.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons@7.0.0/primeicons.css">
-    <script type="module" src="../Scripts/Maps/MapsRenderer.js" defer></script>
+    <link rel="stylesheet" href="../Styles/guides.css">
+    <script src="../Scripts/Guides/GuidesRenderer.js" defer></script>
 </head>
 <body>
 <header>
     <div class="container">
         <a href="/SABAWeb" class="logo">
             <img src="../logo.png" alt="">
-            <h1 id="Top">SABA</h1>
+            <h1>SABA</h1>
         </a>
         <div class="menus">
             <div class="icons">
@@ -30,9 +29,9 @@
             <nav>
                 <ul>
                     <li><a href="/SABAWeb">Главная</a></li>
-                    <li><a href="./Ratings">Рейтинги</a></li>
-                    <li><a href="./Maps">Карты</a></li>
-                    <li><a href="./Guides">Гайды</a></li>
+                    <li><a href="/SABAWeb/Pages/Ratings">Рейтинги</a></li>
+                    <li><a href="/SABAWeb/Pages/Maps">Карты</a></li>
+                    <li><a href="/SABAWeb/Pages/Guides">Гайды</a></li>
                     <li><a href=""></a></li>
                 </ul>
             </nav>
@@ -40,18 +39,28 @@
     </div>
 </header>
 
-<div class="maps">
-    <h1>Список карт</h1>
+<div class="guides">
+    <h1>Гайды по игре</h1>
+
 
     <div class="searchbar">
-        <input type="text" id="searchbar" placeholder="Поиск по автору или названию...">
+        <input type="text" placeholder="Поиск гайдов..." id="searchbar">
         <label for="searchbar"></label>
     </div>
 
-    <div class="maplist" id="maplist">
+
+    <div class="guidelist" id="guidelist">
+        <a href="" class="guidecard">
+            <div class="thumb">
+                <img src="../Images/Guides/accguide.png" alt="guide thumbnail">
+            </div>
+            <div class="info">
+                <h2 class="title">Как улучшить точность</h2>
+                <p class="desc">Подробное руководство по увеличению точности ударов.</p>
+            </div>
+        </a>
     </div>
 </div>
-</body>
 
 <footer>
     <div class="mainfooter">
@@ -80,4 +89,4 @@
     </div>
 </footer>
 
-</html>
+</body>

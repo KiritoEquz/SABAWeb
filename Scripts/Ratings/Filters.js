@@ -1,4 +1,4 @@
-import {players} from '../Data/Players.js';
+import {fetchedPlayers as players} from '../Data/Players.js';
 import {nextBtn, nextPage, prevBtn, prevPage, refreshCount} from "./Pages.js";
 
 const filters = document.getElementById("filters");
@@ -7,24 +7,18 @@ const searchbar = document.getElementById("search");
 const countryselect = document.getElementById("country");
 
 const countries = [
-    { code: "us", name: "США"},
     { code: "ru", name: "Россия"},
-    { code: "am", name: "Армения"},
-    { code: "jp", name: "Япония"}
+    { code: "by", name: "Беларусь"},
+    { code: "ua", name: "Украина"},
+    { code: "kz", name: "Казахстан"}
 ]
 
 let filteredPlayers = players;
 
 
 
-players.sort((a, b) => {
-    const ppA = parseFloat(a.pp.replace(/,/g,''));
-    const ppB = parseFloat(b.pp.replace(/,/g,''));
-    return ppB - ppA;
-})
-
 for (let i = 0; i < players.length; i++) {
-    players[i].rank = i+1;
+    players[i].sabarank = i+1;
 }
 
 filters.addEventListener('click', () => {
@@ -88,8 +82,8 @@ function renderCountries() {
     })
 }
 
-document.addEventListener('DOMContentLoaded', () => renderPlayerCards(players ,1));
-document.addEventListener('DOMContentLoaded', () => renderCountries());
+document.addEventListener('DOMContentLoaded', renderPlayerCards(players ,1));
+document.addEventListener('DOMContentLoaded', renderCountries());
 
 searchbar.addEventListener("input", () => {renderFiltered(players); refreshCount();});
 countryselect.addEventListener("input", () => {renderFiltered(players); refreshCount();});

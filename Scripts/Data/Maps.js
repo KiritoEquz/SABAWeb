@@ -23,6 +23,7 @@ export let maps = mapCodes.map(mapCode => {
         name: thisMap.metadata.songName,
         author: thisMap.metadata.songAuthorName,
         mapper: thisMap.metadata.levelAuthorName,
-        imageURL: thisMap.versions[0].coverURL
+        imageURL: thisMap.versions[0].coverURL,
+        downloadURL: thisMap.versions[0].downloadURL
     }
 })

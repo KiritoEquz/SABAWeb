@@ -155,6 +155,45 @@ label[for="burger"] span::after {
     transform: rotate(-45deg);
 }
 
+footer {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    background-color: #292929;
+    flex-direction: column;
+
+}
+
+.mainfooter {
+    padding-top: 40px;
+    padding-left: 400px;
+    height: 80%;
+    display: flex;
+    gap: 300px;
+}
+.mainfooter p {
+    color: #3690e3;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.mainfooter ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.mainfooter li {
+    list-style: none;
+}
+
+.bottomfooter {
+    height: 20%;
+    width: 100%;
+    border-top: 1px solid #5a5a5a;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 1500px) {
     header nav {
         display: none;
@@ -180,11 +219,21 @@ label[for="burger"] span::after {
     label[for="burger"] {
         display: block;
     }
+
+    .mainfooter {
+        padding-left: 200px;
+    }
 }
 
 @media (max-width: 768px) {
     header .container {
         padding: 0 1em;
+    }
+
+    .mainfooter {
+        padding-left: 0;
+        justify-content: center;
+        gap: 20%;
     }
 }
 

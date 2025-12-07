@@ -1,4 +1,4 @@
-export const players = [
+/*export const players = [
     { name: "KrayserPikmi", country: "ru", avatar: "krayserpikmi.jpg", pp: "99,999.99"},
     { name: "Глеб Романенко", country: "ru", avatar: "gleb-romanenko.jpeg", pp: "17,097.55" },
     { name: "Suziki", country: "ru", avatar: "suziki.jpg", pp: "69,420.55" },
@@ -61,4 +61,31 @@ export const players = [
     { name: "Faberge", country: "ru", avatar: "", pp: "12,456.78" },
     { name: "BearForce", country: "ru", avatar: "", pp: "18,765.09" },
     { name: "KremlinStar", country: "ru", avatar: "", pp: "13,890.12" }
-];
+];*/
+
+class Player {
+    constructor(name, country, avatar, pp, rank) {
+        this.name = name;
+        this.country = country;
+        this.avatar = avatar;
+        this.pp = pp;
+        this.rank = rank;
+    }
+}
+
+export let fetchedPlayers = null;
+
+let ssResponse = null;
+
+await fetch('https://c.prox.shyyluna.dev/https://scoresaber.com/api/players?countries=ru%2Crb%2Cua%2Ckz')
+    .then(data => data.json()).then(json => ssResponse = json);
+
+fetchedPlayers = ssResponse.players.map(player => {
+    return {
+        name: player.name,
+        country: player.country.toLowerCase(),
+        avatar: player.profilePicture,
+        pp: player.pp,
+        rank: player.rank
+    }
+})

@@ -101,6 +101,5 @@ function renderScores(fetchedScores) {
 document.addEventListener('DOMContentLoaded', topBtn.classList.add('active'));
 document.addEventListener('DOMContentLoaded', renderScores(fetchedTopScores));
 
-
 topBtn.addEventListener('click', () => sortTop());
 recentBtn.addEventListener('click', () => sortRecent());
