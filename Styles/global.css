@@ -161,7 +161,7 @@ footer {
     display: flex;
     background-color: #292929;
     flex-direction: column;
-
+    margin-top: 20px;
 }
 
 .mainfooter {
