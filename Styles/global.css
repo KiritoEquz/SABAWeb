@@ -118,7 +118,8 @@ label[for="burger"] span {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    transition: background-color 0s .25s;
+    transition: opacity 0s .25s;
+
 }
 
 label[for="burger"] span::before,
