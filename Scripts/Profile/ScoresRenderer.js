@@ -1,10 +1,8 @@
 import {fetchedTopScores} from "../Data/Scores.js"
 import {fetchedRecentScores} from "../Data/Scores.js"
-import {maps} from "../Data/Maps.js"
 
 const topBtn = document.getElementById('top');
 const recentBtn = document.getElementById('recent');
-
 
 function getScoresHTML(fetchedScores) {
     return fetchedScores.map(score => {
@@ -78,6 +76,15 @@ function getScoresHTML(fetchedScores) {
     })
 }
 
+function renderScores(fetchedScores) {
+    const scoreTable = document.getElementById('scores');
+    scoreTable.innerHTML = getScoresHTML(fetchedScores).join('');
+}
+
+document.addEventListener('DOMContentLoaded', renderScores(fetchedTopScores));
+
+document.addEventListener('DOMContentLoaded', topBtn.classList.add('active'));
+
 function sortTop() {
     if (!topBtn.classList.contains('active') && recentBtn.classList.contains('active')) {
         recentBtn.classList.remove('active');
@@ -85,7 +92,6 @@ function sortTop() {
         renderScores(fetchedTopScores)
     }
 }
-
 function sortRecent() {
     if (!recentBtn.classList.contains('active') && topBtn.classList.contains('active')) {
         topBtn.classList.remove('active');
@@ -93,15 +99,6 @@ function sortRecent() {
         renderScores(fetchedRecentScores)
     }
 }
-
-function renderScores(fetchedScores) {
-    const scoreTable = document.getElementById('scores');
-
-    scoreTable.innerHTML = getScoresHTML(fetchedScores).join('');
-}
-
-document.addEventListener('DOMContentLoaded', topBtn.classList.add('active'));
-document.addEventListener('DOMContentLoaded', renderScores(fetchedTopScores));
 
 topBtn.addEventListener('click', () => sortTop());
 recentBtn.addEventListener('click', () => sortRecent());
