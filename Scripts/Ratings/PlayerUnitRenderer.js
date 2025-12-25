@@ -31,7 +31,7 @@ function renderPlayerCards(players, pageNumber) {
         if (i + (pageNumber-1)*10 >= players.length) return;
         const unit = createPlayerUnit(players[i+(pageNumber-1)*10]);
         const flagc = unit.getElementsByClassName("flag");
-        flagc[0].style.backgroundColor = getColorByRating(players.rank);
+        flagc[0].style.backgroundColor = getColorByRating(players[i].sabarank);
         table.appendChild(unit);
     }
 }
